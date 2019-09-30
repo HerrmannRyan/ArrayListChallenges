@@ -9,13 +9,16 @@ public class ArrayListChallenges
 		public static void main(String[] args)
 			{
 				//Initial commit
-				createAndPrintArrayList();
-				//sortAlphabetically();
-				//printFirstAndLast();
+				createList();
+				printList();
+				sortAlphabetically();
+				printFirstAndLast();
+				mostCommonChar();
+				mostAndFewest();
 
 			}
 		
-		public static void createAndPrintArrayList()
+		public static void createList()
 		{
 			 
 			
@@ -31,10 +34,16 @@ public class ArrayListChallenges
 			videoGameArray.add("Division 2");
 			videoGameArray.add("Assassin\'s Creed");
 			
+			
+		}
+		
+		public static void printList()
+		{
 			for(String s: videoGameArray)
 				{
 					System.out.println(s);
 				}
+			
 		}
 		
 		public static void sortAlphabetically()
@@ -56,7 +65,7 @@ public class ArrayListChallenges
 			String lastGame = videoGameArray.get(videoGameArray.size()-1);
 			
 			System.out.println("\n" + firstGame);
-			System.out.println(lastGame);
+			System.out.println(lastGame + "\n");
 			
 		}
 		public static void mostCommonChar()
@@ -65,9 +74,54 @@ public class ArrayListChallenges
 			for (int i = videoGameArray.size() - 1; i >= 0; i--)
 				{
 					
-					videoGameArray.get(i);
+					if(videoGameArray.get(i).substring(0,1).equals("C"))
+					{
+						videoGameArray.remove(i);	
+					}
 					
 				}
+			
+			for(String s: videoGameArray)
+				{
+					System.out.println(s);
+				}
+			
+		}
+		
+		public static void mostAndFewest()
+		{
+			
+			createList();
+			
+			int fewestCharacters = Integer.MAX_VALUE;
+			int mostCharacters = 0;
+			String smallestSize = "";
+			String largestSize = "";
+			
+			for(String s: videoGameArray)
+			{
+				if (s.length() > mostCharacters)
+				{
+					mostCharacters = s.length();
+					largestSize = s;
+				}
+				
+			}
+			
+			for (String z: videoGameArray)
+			{
+				
+				if (z.length() < fewestCharacters)
+					{
+						fewestCharacters = z.length();
+						smallestSize = z;
+					}
+				
+			}
+			
+			System.out.println("The object with the largest size is: " + largestSize);
+			System.out.println("The object with the smallest size is: " + smallestSize);
+			
 			
 		}
 
