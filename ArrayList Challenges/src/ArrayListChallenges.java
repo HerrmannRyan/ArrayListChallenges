@@ -81,6 +81,7 @@ public class ArrayListChallenges
 					
 				}
 			
+			System.out.println("Removing all of the names that begin with \"C\"");
 			for(String s: videoGameArray)
 				{
 					System.out.println(s);
@@ -119,7 +120,7 @@ public class ArrayListChallenges
 				
 			}
 			
-			System.out.println("The object with the largest size is: " + largestSize);
+			System.out.println("\nThe object with the largest size is: " + largestSize);
 			System.out.println("The object with the smallest size is: " + smallestSize);
 			
 			
